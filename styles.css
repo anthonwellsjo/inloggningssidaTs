@@ -1,10 +1,40 @@
 #app {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 #frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+.input {
+  margin: 10px;
+}
+form {
+  border: solid black 2px;
+  box-shadow: 4px 15px lightpink;
+  padding: 20px;
+  border-radius: 2px;
+  background-color: lightgoldenrodyellow;
+  text-align: center;
+}
 
+.button {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: white;
+}
+
+h1 {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.label,
+button {
+  font-family: "Kumbh Sans", sans-serif;
+}
