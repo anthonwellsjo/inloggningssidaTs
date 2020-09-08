@@ -55,10 +55,11 @@ const createBackButtonEventHandler = () => {
 const createStartPage = () => {
     let form = document.createElement("form");
     form.innerHTML = (
-        "<label class='label' for='name'>Namn:</label><input type='text' class='input' id='name'><label for='pass' class='label'>Lösenord</label><input type='text' id='pass' class='input'><button class='button' id='log-in-btn'>Logga in</button>"
+        "<label class='label' for='name'>Namn:</label><input type='text' class='input' id='name'><br><label for='pass' class='label'>Lösenord</label><input type='text' id='pass' class='input'><br><button class='button' id='log-in-btn'>Logga in</button>"
     );
 
     console.log(form, "form");
+    
     return form;
 }
 
