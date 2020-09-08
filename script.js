@@ -1,10 +1,11 @@
-//Globala variabler
+///////////////////////////////////////////Globala variabler
 
 const NAMN = "test";
 const PASS = "1234";
 
 document.body.onload = initializeApp;
 
+//första funktion. Initialiserar app
 
 function initializeApp() {
     const user = getUserName();
@@ -34,7 +35,7 @@ function loadLoginFailedPage() {
 }
 
 
-//Failed Log In Page Render - funktioner
+////////////////////////////////////////////Failed Log In Page Render - funktioner
 
 const createFailPage = () => {
     let div = document.createElement("div");
@@ -50,23 +51,19 @@ const createBackButtonEventHandler = () => {
 }
 
 
-//Login Page Render -funktioner.
+//////////////////////////////////////////////Login Page Render -funktioner.
 
 const createStartPage = () => {
     let form = document.createElement("form");
     form.innerHTML = (
         "<label class='label' for='name'>Namn:</label><input type='text' class='input' id='name'><br><label for='pass' class='label'>Lösenord</label><input type='text' id='pass' class='input'><br><button class='button' id='log-in-btn'>Logga in</button>"
     );
-
-    console.log(form, "form");
-
     return form;
 }
 
 const appendPage = page => {
     const app = document.getElementById("app");
     if (app.firstChild !== page) {
-        console.log("new page, erasing app.innerHTML before adding new", app.lastChild, page);
         app.innerHTML = '';
     }
     app.appendChild(page);
@@ -79,7 +76,7 @@ const createLoginButtonEventHandler = () => {
     });
 }
 
-//User Page Render -funktioner
+////////////////////////////////////////////////User Page Render -funktioner
 
 const createUserPage = name => {
     let div = document.createElement("div");
@@ -95,7 +92,7 @@ const createLogoutButtonEventHandler = () => {
 }
 
 
-//Event Handlers
+////////////////////////////////////////////////////Event Handlers
 
 const onLoginBtnClickedEventHandler = () => {
     const namn = document.getElementById("name").value;
@@ -118,7 +115,7 @@ const onBackBtnClickedEventHandler = () => {
 }
 
 
-//Authentication - relaterade funktioner
+/////////////////////////////////////////////////Authentication - relaterade funktioner
 
 const passwordChecksOut = (inpName, inpPass) => {
     return (inpName === NAMN && inpPass === PASS);
@@ -133,7 +130,7 @@ const userIsLoggedIn = () => {
 }
 
 const getUserName = () => {
-    return Object.keys(localStorage)[0];
+    return localStorage.getItem("activeUser");
 }
 
 const logOutUser = () => {
