@@ -41,7 +41,7 @@ const createFailPage = () => {
     let div = document.createElement("div");
     div.setAttribute("id", "frame");
     div.innerHTML = (
-        `<header><h1>Sorry, ingen användare med det namnet och lösenordet finns här...</h1><header><br><button class="button" id='back-btn'>Tillbaks</button>`
+        `<header><h1>Sorry, ingen användare med det namnet och lösenordet finns här...</h1><header><br><button class="button" id='back-btn'>Tillbaka</button>`
     );
     return div;
 }
@@ -51,12 +51,12 @@ const createBackButtonEventHandler = () => {
 }
 
 
-//////////////////////////////////////////////Login Page Render -funktioner.
+//////////////////////////////////////////////Start Page Render -funktioner.
 
 const createStartPage = () => {
     let form = document.createElement("form");
     form.innerHTML = (
-        "<label class='label' for='name'>Namn:</label><input type='text' class='input' id='name'><br><label for='pass' class='label'>Lösenord</label><input type='text' id='pass' class='input'><br><button class='button' id='log-in-btn'>Logga in</button>"
+        "<label class='label' for='name'>Namn:</label><br><input type='text' class='input' id='name'><br><label for='pass' class='label'>Lösenord:</label><br><input type='text' id='pass' class='input'><br><br><br><button class='button' id='log-in-btn'>Logga in</button>"
     );
     return form;
 }
@@ -82,7 +82,7 @@ const createUserPage = name => {
     let div = document.createElement("div");
     div.setAttribute("id", "frame");
     div.innerHTML = (
-        `<header><h1>Välkommen till din sida <i>${name}</i></h1><header><br><img src='https://picsum.photos/200/300' alt='random photo'/><br><button class="button" id='log-out-btn'>Logga ut</button>`
+        `<header><h1>Välkommen till din sida <u><i>${name}</i></u> !</h1><header><br><img src='https://picsum.photos/200/300' alt='random photo'/><br><br><br><button class="button" id='log-out-btn'>Logga ut</button>`
     );
     return div;
 }
