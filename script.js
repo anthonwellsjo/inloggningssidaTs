@@ -8,7 +8,7 @@ document.body.onload = initializeApp;
 
 function initializeApp() {
     const user = getUserName();
-    if (userIsLoggedIn(user)) {
+    if (userIsLoggedIn()) {
         loadUserPage(user);
     } else {
         loadStartPage();
@@ -59,7 +59,7 @@ const createStartPage = () => {
     );
 
     console.log(form, "form");
-    
+
     return form;
 }
 
@@ -109,8 +109,7 @@ const onLoginBtnClickedEventHandler = () => {
 }
 
 const onLogoutBtnClickedEventHandler = () => {
-    const user = getUserName();
-    logOutUser(user);
+    logOutUser();
     loadStartPage();
 }
 
@@ -126,19 +125,19 @@ const passwordChecksOut = (inpName, inpPass) => {
 }
 
 const loginUser = name => {
-    localStorage.setItem(name, "active");
+    localStorage.setItem("activeUser", name);
 }
 
-const userIsLoggedIn = user => {
-    return (localStorage.getItem(user) === "active");
+const userIsLoggedIn = () => {
+    return (localStorage.getItem("activeUser") !== null);
 }
 
 const getUserName = () => {
     return Object.keys(localStorage)[0];
 }
 
-const logOutUser = user => {
-    localStorage.setItem(user, "disactive");
+const logOutUser = () => {
+    localStorage.removeItem("activeUser");
 }
 
 
